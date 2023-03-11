@@ -1,7 +1,8 @@
 package main
 
 import (
-	sum "exemple/hello/src/controller"
+	"exemple/hello/src/controller/subtract"
+	"exemple/hello/src/controller/sum"
 
 	"github.com/gin-gonic/gin"
 )
@@ -9,5 +10,6 @@ import (
 func main() {
 	router := gin.Default()
 	router.GET("/sum", sum.Sum)
+	router.GET("/subtract", subtract.Subtract)
 	router.Run()
 }
