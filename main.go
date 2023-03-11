@@ -1,19 +1,13 @@
 package main
 
 import (
-	"fmt"
-	"net/http"
+	"exemple/hello/src/controller"
 
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
 	router := gin.Default()
-	router.GET("/ping", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{
-			"message": "pong",
-		})
-	})
-	fmt.Println("Hello, world!")
+	router.GET("/sum", controller.Sum)
 	router.Run()
 }

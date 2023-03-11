@@ -1,11 +1,14 @@
-package sum
+package controller
 
 import (
 	"net/http"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
 
-func Sum(gin *gin.Context) {
-	gin.JSON(http.StatusOK, "hello")
+func Sum(g *gin.Context) {
+	firstnumber, _ := strconv.Atoi(g.Query("firstnumber"))
+	secondnumber, _ := strconv.Atoi(g.Query("secondnumber"))
+	g.JSON(http.StatusOK, secondnumber+firstnumber)
 }
